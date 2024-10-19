@@ -1,0 +1,175 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    min-height: 100vh;
+    background-color: papayawhip;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD1DC; /* Nền màu hồng nhạt */
+    overflow: hidden;
+    position: relative;
+}
+
+.banner {
+    width: 600px;
+    height: 211px;
+    top: 0%;
+    position: absolute;
+    justify-content: center;
+    background: url('image5.png');
+}
+
+.flower {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    position: absolute;
+    animation: rotateFlower 4s infinite alternate ease-in-out;
+}
+
+#flower1 { top: 15%; left: 10%; background: url('image1.png') no-repeat center center; }
+#flower2 { bottom: 10%; left: 7%; background: url('image2.png') no-repeat center center; }
+#flower3 { bottom: 10%; right: 10%; background: url('image3.png') no-repeat center center; }
+#flower4 { top: 6%; right: 15%; background: url('image4.png') no-repeat center center; }
+
+@keyframes rotateFlower {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(-30deg); }
+}
+
+.star {
+    position: absolute;
+    display: flex;
+}
+
+.four-point-star {
+    position: relative;
+    animation: blink 2s infinite;
+}
+
+.four-point-star::after,
+.four-point-star::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "\2726";
+    font-size: 2rem; /* Adjust the size as needed */
+}
+
+.four-point-star::after { /* The foreground star */
+    background: linear-gradient(135deg, rgba(255,191,183,1) 20%, rgba(243,44,117,1) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.four-point-star::before { /* The star shadow */
+    color: transparent;
+    text-shadow: 2px 3px 10px rgba(242, 96, 85, 1);
+}
+
+@keyframes blink {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+#star1 { top: 2%; left: 26%; }
+#star2 { top: 6%; left: 24%; }
+#star3 { top: 20%; right: 30%; }
+#star4 { top: 6%; right: 30%; }
+
+#flower6, #flower7, #flower8, #flower9, #flower10 {
+    width: 100px;
+    position: absolute;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform-origin: center 66%;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.flower-bundle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 45%;
+    transform: translateY(-50%);
+}
+
+#flower6 { left: 0; }
+#flower7 { left: 20%; transform: rotate(-30deg); }
+#flower8 { left: 40%; transform: rotate(30deg); }
+#flower9 { left: 60%; transform: rotate(-60deg); }
+#flower10 { left: 80%; transform: rotate(60deg); }
+
+.message {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem; /* Kích thước chữ */
+    font-family: 'Dancing Script', cursive; /* Áp dụng font chữ dễ thương */
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#message, #gift-message, #love-you {
+    font-size: 4rem; /* Tăng kích thước gấp đôi */
+}
+
+.final-gift {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.btn {
+    background-color: #fa8072;
+    color: white;
+    margin-bottom: 2%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.25em;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    padding: 1em 2em;
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Dancing Script', cursive; /* Áp dụng font chữ dễ thương */
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    background-color: #eb5937;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #eb5937;
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(50, 151, 211, 0.5);
+}
